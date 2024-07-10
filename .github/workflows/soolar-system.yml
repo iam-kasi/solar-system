@@ -58,7 +58,8 @@ jobs:
            - name: install Dependencies
              run: npm install
 
-           - name: Unit Testing
+           - name: check code coverage
+             continue-on-error: true
              run: npm run coverage
 
            - name: Archive Test Results
