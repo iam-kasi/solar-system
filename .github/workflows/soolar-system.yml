@@ -43,8 +43,8 @@ jobs:
                 name: Mocah-Test-Result
                 path: test-results.xml
     
-        code-coverage: 
-        name: code-coverage
+    code-coverage: 
+        name: Code Coverage
         runs-on: ubuntu-latest
         steps:
            - name: Checkout Repo
