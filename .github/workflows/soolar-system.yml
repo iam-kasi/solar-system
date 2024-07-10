@@ -42,3 +42,28 @@ jobs:
              with:
                 name: Mocah-Test-Result
                 path: test-results.xml
+    
+        code-coverage: 
+        name: code-coverage
+        runs-on: ubuntu-latest
+        steps:
+           - name: Checkout Repo
+             uses: actions/checkout@v4
+
+           - name: Setup NodeJS Version - 18
+             uses: actions/setup-node@v3
+             with:
+                node-version: 18
+
+           - name: install Dependencies
+             run: npm install
+
+           - name: Unit Testing
+             run: npm run coverage
+
+           - name: Archive Test Results
+             uses: actions/upload-artifact@v3
+             with:
+                name: code-coverage-Result
+                path: coverage
+                retention-days: 5
